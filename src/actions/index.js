@@ -33,7 +33,8 @@ export const fetchData = (values) => {
                                 ClosedDate: values.ClosedDate,
                                 CreatedDate: values.CreatedDate,
                             }
-                        ]
+                        ],
+                        ignore_out_key: ['Id', 'CaseNumber']
                     }
                 },
                 {headers: 'pass headers here if any'})
