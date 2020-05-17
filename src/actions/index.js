@@ -46,6 +46,7 @@ export const fetchData = (values) => {
                     CaseNumber: values['CaseNumber']
                 }
             })
+            console.log(response)
             const res = await axios.post('enter url here',
                 {
                     accessToken:'provide access Token here',
@@ -58,6 +59,7 @@ export const fetchData = (values) => {
                         ]
                     }
                 })
+            console.log(res)
             dispatch(fetchSuccess(res.data))
         } catch (err) {
             dispatch(fetchFail(err))
