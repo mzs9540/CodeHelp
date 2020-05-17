@@ -33,8 +33,8 @@ export const fetchData = (values) => {
                     request:{
                         data:[
                             {
-                                CaseNumber: response['CaseNumber'],
-                                Case_Description: response['Case_Description__c'],
+                                CaseNumber: response[0]['CaseNumber'],
+                                Case_Description: response[0]['Case_Description__c'],
                             }
                         ]
                     }
