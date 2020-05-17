@@ -41,14 +41,19 @@ const fetchDesCase = (response) => {
         console.log(response)
         const res = await axios.post('enter url here',
             {
-                accessToken:'provide access Token here',
+                accessKey:'provide access Token here',
                 request:{
-                    data:[
+                    param:[
                         {
                             CaseNumber: response[0]['CaseNumber'],
                             Case_Description: response[0]['Case_Description__c'],
                         }
                     ]
+                }
+            },
+            {
+                headers: {
+                    'Content-Type': 'application/json'
                 }
             });
         dispatch(fetchSuccess(res.data));
