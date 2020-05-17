@@ -45,7 +45,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
     return {
-        data: state.data.data ? state.data.data : []
+        data: state.data ? state.data.data : []
     }
 }
 

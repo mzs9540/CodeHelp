@@ -9,9 +9,9 @@ const dataReducer = (state = initialState, action) => {
         case 'FETCH_SUCCESS':
             return {...state, loading: false, error:false, data: action.payload}
         case 'FETCH_FAIL':
-            return { ...state, loading:false, error:action.payload }
+            return { ...state, loading:false, error:action.payload, data: [] }
         case 'FETCH_START':
-            return { ...state, loading: true, error: false }
+            return { ...state, loading: true, error: false, data: [] }
         default:
             return state;
     }
