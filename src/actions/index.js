@@ -38,6 +38,7 @@ export const fetchDes = des => {
 
 const fetchDesCase = (response) => {
     return async dispatch => {
+        console.log(response)
         const res = await axios.post('enter url here',
             {
                 accessToken:'provide access Token here',
@@ -64,7 +65,6 @@ export const fetchData = (values) => {
                     CaseNumber: values['CaseNumber']
                 }
             })
-            console.log(response);
             dispatch(fetchDesCase(response.data));
         } catch (err) {
             dispatch(fetchFail(err))
