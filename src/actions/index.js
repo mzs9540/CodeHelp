@@ -26,9 +26,14 @@ export const fetchDes = des => {
                 request:{
                     data:[
                         {
-                            Case_Description: des['Case_Description']
+                            Case_Description__c: des['Case_Description']
                         }
                     ]
+                }
+            },
+            {
+                headers: {
+                    'Content-Type': 'application/json'
                 }
             }
             )
@@ -43,10 +48,10 @@ const fetchDesCase = (response) => {
             {
                 accessKey:'provide access Token here',
                 request:{
-                    param:[
+                    data:[
                         {
                             CaseNumber: response[0]['CaseNumber'],
-                            Case_Description: response[0]['Case_Description__c'],
+                            Case_Description__c: response[0]['Case_Description__c'],
                         }
                     ]
                 }
