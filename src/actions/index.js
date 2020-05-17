@@ -26,7 +26,7 @@ export const fetchDes = des => {
                 request:{
                     data:[
                         {
-                            Case_Description: des['Case_Description__c']
+                            Case_Description: des['Case_Description']
                         }
                     ]
                 }

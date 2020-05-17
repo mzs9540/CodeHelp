@@ -43,8 +43,8 @@ class DataForm extends Component {
                     </form>
                     <br/>
                     <form onSubmit={this.props.handleSubmit(this.onSubmitDes)}>
-                        <Field name="CaseNumber" component={this.renderInput} type="text"
-                               id="CaseNumber"
+                        <Field name="Case_Description" component={this.renderInput} type="text"
+                               id="Case_Description"
                                label="Enter Case Description"
                                margin="normal"
                         />
