@@ -17,9 +17,28 @@ const fetchSuccess = res => {
     return { type: 'FETCH_SUCCESS', payload: res }
 }
 
+export const fetchDes = des => {
+    return async dispatch => {
+        dispatch(fetchStart());
+        const res = await axios.post('url',
+            {
+                accessToken:'provide access Token here',
+                request:{
+                    data:[
+                        {
+                            Case_Description: des['Case_Description__c']
+                        }
+                    ]
+                }
+            }
+            )
+        dispatch(fetchSuccess(res.data))
+    }
+}
+
 export const fetchData = (values) => {
     return async dispatch => {
-        dispatch(fetchStart);
+        dispatch(fetchStart());
         try {
             const url = 'http://127.0.0.1:5000/api/v1/serviceconnect/data'
             const response = await axios.get(url, {

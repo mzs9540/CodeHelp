@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux';
 import {Field, reduxForm} from "redux-form";
-import {fetchData} from "../actions";
+import {fetchData, fetchDes} from "../actions";
 import {Container, TextField, Fab, Box} from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import {Typography, Divider} from "@material-ui/core";
@@ -15,8 +15,11 @@ class DataForm extends Component {
     };
 
     onSubmit = (values) => {
-        console.log(values);
         this.props.fetchData(values);
+    };
+
+    onSubmitDes = (values) => {
+        this.props.fetchDes(values);
     };
 
     render() {
@@ -38,12 +41,24 @@ class DataForm extends Component {
                             Submit
                         </Fab>
                     </form>
+                    <br/>
+                    <form onSubmit={this.props.handleSubmit(this.onSubmitDes)}>
+                        <Field name="CaseNumber" component={this.renderInput} type="text"
+                               id="CaseNumber"
+                               label="Enter Case Description"
+                               margin="normal"
+                        />
+                        <Fab variant="extended" aria-label="Submit" type='submit'
+                             className='button-decorate'>
+                            Submit
+                        </Fab>
+                    </form>
                 </Paper>
             </Container>
         )
     }
 }
 
-DataForm = connect(null, {fetchData})(DataForm);
+DataForm = connect(null, {fetchData, fetchDes})(DataForm);
 
 export default reduxForm({form: 'loginForm'})(DataForm);
