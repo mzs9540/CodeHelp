@@ -15,8 +15,8 @@ class DataForm extends Component {
     };
 
     onSubmit = (values) => {
-        console.log(values.data);
-        this.props.fetchData(values.data);
+        console.log(values);
+        this.props.fetchData(values);
     };
 
     render() {
@@ -28,28 +28,9 @@ class DataForm extends Component {
                     <Divider/>
                     <br/>
                     <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
-                        <Field name="id" component={this.renderInput} type="text" id="id"
-                               label="Enter Id"
-                               margin="normal"
-                        />
                         <Field name="CaseNumber" component={this.renderInput} type="text"
                                id="CaseNumber"
                                label="Enter Case Number"
-                               margin="normal"
-                        />
-                        <Field name="Case_Description" component={this.renderInput} type="text"
-                               id="Case_Description"
-                               label="Enter Case Description"
-                               margin="normal"
-                        />
-                        <Field name="ClosedDate" component={this.renderInput} type="text"
-                               id="ClosedDate"
-                               label="Enter Closed Date"
-                               margin="normal"
-                        />
-                        <Field name="CreatedDate" component={this.renderInput} type="text"
-                               id="CreatedDate"
-                               label="Enter Created Date"
                                margin="normal"
                         />
                         <Fab variant="extended" aria-label="Submit" type='submit'

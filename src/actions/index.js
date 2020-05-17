@@ -21,23 +21,24 @@ export const fetchData = (values) => {
     return async dispatch => {
         dispatch(fetchStart);
         try {
-            const res = await axios.post('url link https//:www.example.com',
+            const url = 'http://127.0.0.1:5000/api/v1/serviceconnect/data'
+            const response = await axios.get(url, {
+                params: {
+                    CaseNumber: values['CaseNumber']
+                }
+            })
+            const res = await axios.post('enter url here',
                 {
                     accessToken:'provide access Token here',
                     request:{
                         data:[
                             {
-                                Id: values.Id,
-                                CaseNumber: values.CaseNumber,
-                                Case_Description: values.Case_Description,
-                                ClosedDate: values.ClosedDate,
-                                CreatedDate: values.CreatedDate,
+                                CaseNumber: response['CaseNumber'],
+                                Case_Description: response['Case_Description__c'],
                             }
-                        ],
-                        ignore_out_key: ['Id', 'CaseNumber']
+                        ]
                     }
-                },
-                {headers: 'pass headers here if any'})
+                })
             dispatch(fetchSuccess(res.data))
         } catch (err) {
             dispatch(fetchFail(err))
