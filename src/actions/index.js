@@ -56,6 +56,7 @@ const fetchDesCase = (response) => {
                     'Content-Type': 'application/json'
                 }
             });
+        console.log(res.data);
         dispatch(fetchSuccess(res.data));
     }
 }

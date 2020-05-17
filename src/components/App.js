@@ -15,7 +15,7 @@ class App extends Component {
             <DataForm/>
             <br/>
             <Paper elevation={3}>
-                {this.props.data.map(obj => {
+                {this.props.data? this.props.data.map(obj => {
                     return (
                         <>
                             <Typography variant='subtitle2'>
@@ -36,7 +36,7 @@ class App extends Component {
                         </>
 
                     )
-                })}
+                }) : null}
             </Paper>
             </>
         );
