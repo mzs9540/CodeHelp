@@ -22,7 +22,7 @@ export const fetchDes = des => {
         dispatch(fetchStart());
         const res = await axios.post('url',
             {
-                accessToken:'provide access Token here',
+                accessKey:'provide access Token here',
                 request:{
                     data:[
                         {
