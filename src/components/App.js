@@ -21,14 +21,13 @@ class App extends Component {
                         <>
                             {
                                 'CaseNumber' in obj?
-                                <Typography variant='subtitle2'>
-                                Case Number: {obj.CaseNumber}
+                                <Typography variant='h6'>
+                                    <strong>Case Number:</strong> {obj.CaseNumber}
                                 </Typography>
                                     : null
                             }
-                            }
-                            <Typography variant='subtitle2'>
-                                Case Description: {obj.Case_Description__c}
+                            <Typography variant='h6'>
+                                <strong>Case Description:</strong> {obj.Case_Description__c}
                             </Typography>
                         </>
 
@@ -37,6 +36,10 @@ class App extends Component {
             </Paper>
             </>
         );
+    }
+
+    componentWillUnmount() {
+        localStorage.clear();
     }
 }
 
