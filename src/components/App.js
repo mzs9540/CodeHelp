@@ -15,6 +15,7 @@ class App extends Component {
             <DataForm/>
             <br/>
             <Paper elevation={3}>
+                {console.log(this.props.data)}
                 {this.props.data ? this.props.data.map(obj => {
                     return (
                         <>
