@@ -19,9 +19,14 @@ class App extends Component {
                 {this.props.data.response ? this.props.data.response.map(obj => {
                     return (
                         <>
-                            <Typography variant='subtitle2'>
+                            {
+                                'CaseNumber' in obj?
+                                <Typography variant='subtitle2'>
                                 Case Number: {obj.CaseNumber}
-                            </Typography>
+                                </Typography>
+                                    : null
+                            }
+                            }
                             <Typography variant='subtitle2'>
                                 Case Description: {obj.Case_Description__c}
                             </Typography>
