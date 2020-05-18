@@ -26,6 +26,7 @@ class App extends Component {
                                 </Typography>
                                     : null
                             }
+                            <br/>
                             <Typography variant='h6'>
                                 <strong>Case Description:</strong> {obj.Case_Description__c}
                             </Typography>
