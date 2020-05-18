@@ -16,28 +16,7 @@ class App extends Component {
             <br/>
             <Paper elevation={3}>
                 {console.log(this.props.data)}
-                {this.props.data ? this.props.data.map(obj => {
-                    return (
-                        <>
-                            <Typography variant='subtitle2'>
-                                Case Number: {obj.CaseNumber}
-                            </Typography>
-                            <Typography variant='subtitle2'>
-                                Case Description: {obj.Case_Description}
-                            </Typography>
-                            <Typography variant='subtitle2'>
-                                Closed Date: {obj.ClosedDate}
-                            </Typography>
-                            <Typography variant='subtitle2'>
-                                Created Date: {obj.CreatedDate}
-                            </Typography>
-                            <Typography variant='subtitle2'>
-                                Id: {obj.Id}
-                            </Typography>
-                        </>
-
-                    )
-                }) : null}
+                {this.props.data}
             </Paper>
             </>
         );
